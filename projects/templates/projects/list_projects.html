@@ -17,10 +17,10 @@
                 </tr>
             </thead>
             <tbody>
-                {% for task in list_projects %}
+                {% for project in list_projects %}
                     <tr>
-                        <td>{{ task.name }} </td>
-                        <td>{{ task.projects.all|length }}</td>
+                        <td><a href="{% url 'show_project' project.id %}">{{ project.name }}</a></td>
+                        <td>{{ project.tasks.all|length }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
